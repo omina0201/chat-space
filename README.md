@@ -28,20 +28,22 @@ Things you may want to cover:
 |------|----|-------|
 |eamil|string|null: false|
 |password|string|null: false|
-|username|string|null: false|
+|name|string|null: false|
 ### Association
 - has_many :messages
-- has_many :comments
+- has_many :groups,through: :group_users
+- has_many :groups_users
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|unll: false|
+|groupname|integer|unll: false|
 |user_id|integer|null: false|
-
 ### Association
-- has_many : users
-
+- has_many :users,through: :groups_users
+- has_many :groups_users
+- has_many :messages
+- has_many :messages,through: :groups_users
 
 ## groups_usersテーブル
 |Column|Type|Options|
@@ -55,21 +57,10 @@ Things you may want to cover:
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false|
-|inage|string|null: false|
+|user_id|integer|null: false,foreign_key: true|
+|image|string|foreign_key: true|
 |group_id|integer|null: false|
-|body|text|null: false|
-
+|body|text||
 ### Association
-- has_many :comments
-- belongs_to :groups_users
-
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|messages_id|integer|null: false|
-|user_id|integer|null: false|
-
-### Association
-- belongs_to :messges
+- belongs_to :groups
+- belongs_to :users
