@@ -57,7 +57,7 @@ Things you may want to cover:
 |------|----|-------|
 |user_id|integer|null: false,foreign_key: true|
 |image|string||
-|group_id|integer|null: false|
+|group_id|integer|null: false、foreign_key: true｜
 |body|text||
 ### Association
 - belongs_to :group
