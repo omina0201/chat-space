@@ -1,0 +1,19 @@
+.chat-main 
+ .main_group_info
+  .info_text_box
+   .main_group_name test
+   .menber_list Menber :  もなかアイス
+  %a.editbutton{:href => "#"}Edit
+ .main_message_list
+  .message_text_box
+   .message_text
+    .message_text_username もなかアイス
+    .message_text_date 2020年7月7日 14時13分
+   .message テスト
+ %from.main_message_from
+  .message_from_box
+   %input{type: "text", class:"form_box_text", placeholder:"type a message"}
+   %label{class: "input-box__image"}
+    =icon('fas', 'image')
+    %input{type: "file",class:"input-box__image__file"}
+  %input{type:"submit",class:"send-btn"}
