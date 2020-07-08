@@ -28,15 +28,15 @@
   justify-content: end;
 }
 
-.edit{
-margin-left: 5px;
+.far.fa-edit{
+  margin-left: 5px;
 }
 
-.option{
-margin-left: 5px;
-display:inline-block;
-
-}
+.fas.fa-cog{
+  margin-left: 5px;
+ display:inline-block;
+ text-decoration: none;
+}  
 
 .side_group_list{
   height: calc(100vh - 100px);
@@ -78,7 +78,7 @@ display:inline-block;
  box-sizing: border-box;
 }
 
-.editbutton{
+.edit__button{
   display: block;
   border: 1px solid #38AEF0;
   color: #38AEF0;
