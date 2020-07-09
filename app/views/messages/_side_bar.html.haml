@@ -1,15 +1,15 @@
 .sidebar
- .side_name
-  .user_name_box
-   .Username もなかアイス
-   %ul.icons
-    %li
-     =link_to"#",class: "far fa-edit" do
-      =icon('fab','fa-edit',)
-    %li
-     =link_to"#",class: "fas fa-cog" do
-      =icon('fas','fa-cog')
- .side_group_list 
-  .group_list_text
-   .group_name Techcamp
-   .group_message まだメッセージがありません。
+  .sidebar__name
+    .sidebar__name__box
+      .sidebar__name__user もなかアイス
+      %ul.sidebar__name__icons
+        %li
+        =link_to"#",class: "far fa-edit" do
+          =icon('fab','fa-edit',)
+        %li
+        =link_to"#",class: "fas fa-cog" do
+          =icon('fas','fa-cog')
+  .sidebar__group
+    .sidebar__group__text
+      .sidebar__group__name Techcamp
+      .sidebar__group__message まだメッセージがありません。
