@@ -2,16 +2,20 @@
   .sidebar__name
     .sidebar__box
       .sidebar__user 
-      = current_user.name
+        = current_user.name
       %ul.sidebar__icons
-        %li
-        =link_to"#",class: "icon-1" do
+        %li.icon-1
+        =link_to new_group_path(current_user) do
           =icon('fab','edit',)
         %li.icon-2
         = link_to edit_user_path(current_user) do
           =icon('fas','cog')
   .sidebar__group
-    .sidebar__group__text
-      .sidebar__group__name Techcamp
-      .sidebar__group__message まだメッセージがありません。
+    - current_user.groups.each do |group|
+      .sidebar__group__text
+        = link_to '#' do
+          .sidebar__group__name
+            = group.name
+          .sidebar__group__message
+            メッセージはまだありません
 
