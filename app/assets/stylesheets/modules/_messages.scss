@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 .wrapper{
   display: flex;
 }
@@ -21,10 +24,10 @@
         font-size: 16px;
         font-weight: bold;
       }
-       &__icons{
+        &__icons{
           display: flex;
           justify-content: end;
-       }
+        }
           .icon-1{
             margin-left: 5px;
           }
@@ -33,7 +36,7 @@
             display:inline-block;
             text-decoration: none;
           }
- &__group{
+  &__group{
   height: calc(100vh - 100px);
   padding: 0 20px;
   background-color: #2f3e51;
@@ -99,11 +102,10 @@
     box-sizing: border-box;
     overflow: scroll;
     &__text__box{
-      margin-bottom: 46px;
+    margin-bottom: 46px;
     }
       &__texts{
         display: flex;
-        margin-top: 35px;
       }
         &__username{
           font-size: 16px;
@@ -116,7 +118,6 @@
         &__message{
           font-size: 14px;
           color: #434A54;
-          margin-top: 12px;
         }
   }
   &__message__form{
@@ -143,14 +144,15 @@
       &__file{
         display: none;
       }
-   } 
-   .send-btn{
-     background-color: #38abf0;
-     font-size: 16px;
-     color: #ffffff;
-     padding: 15px 30px;
-     margin-left: 15px;
-     text-decoration: none;
+  } 
+    .send-btn{
+      background-color: #38abf0;
+      font-size: 16px;
+      color: #ffffff;
+      padding: 15px 30px;
+      margin-left: 15px;
+    
+      text-decoration: none;
     }
   }
 }

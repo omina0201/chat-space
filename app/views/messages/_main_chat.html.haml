@@ -1,24 +1,26 @@
 .main 
- .main__group__info
-  .main__text__box
-   .main__group__name 
-    test
-   %ul.main__member__list 
-    Member :
-    %li.main__member 
-    もなかアイス
-  = link_to '#',class: "edit__button" do  
-   Edit
- .main__message__list
+  .main__group__info
+    .main__text__box
+      .main__group__name 
+        test
+      %ul.main__member__list 
+        Member :
+        %li.main__member 
+        もなかアイス
+    = link_to '#',class: "edit__button" do  
+      Edit
+  .main__message__list
+    = render @messages
   .main__message__list__text__box
-   .main__message__list__texts
-    .main__message__list__username もなかアイス
-    .main__message__list__date 2020年7月7日 14時13分
-   .main__message__list__message テスト
- %from.main__message__form
-  .main__message__form__box
-   %input.main__message__form__box__text{type: "text", placeholder:"type a message"}
-   %label.main__message__form__box__image
-    =icon('fas', 'image' , class: 'from__icon')
-    %input.main__message__form__box__file{type: "file",}
-  %input.send-btn{type:"submit",value: 'Send'}
+    .main__message__list__texts
+      .main__message__list__username
+      .main__message__list__date 
+  .main__message__list__message 
+    .main__message__form
+      = form_with model: [@group, @message], html: {class: "main__message__form__box"}, local: true do |f|
+        .main__message__form__box
+          = f.text_field :content, class: 'main__message__form__box__text', placeholder: 'type a message'
+          = f.label :image, class: 'main__message__form__box__image' do
+            =icon('far', 'image' , class: 'from__icon')
+            = f.file_field :image, class: 'main__message__form__box__file'
+          = f.submit'Send', class: 'send-btn' 
