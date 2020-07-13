@@ -1,11 +1,10 @@
 .main__message__list__text__box
-  .main__message__list__text
+  .main__message__list__texts
     .main__message__list__username
       = message.user.name
     .main__message__list__date
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-    .main__message__list__message
-      - if message.content.present?
-        %p.main__message__form
-          = message.content
-      //= image_tag message.image.url, class: 'main__message__form__box__image'
+  .main__message__list__message
+    - if message.content.present?
+      %p.main__message__from
+        = message.content

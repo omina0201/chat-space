@@ -2,25 +2,20 @@
   .main__group__info
     .main__text__box
       .main__group__name 
-        test
+        = @group.name
       %ul.main__member__list 
         Member :
-        %li.main__member 
-        もなかアイス
-    = link_to '#',class: "edit__button" do  
+        - @group.users.each do |user|
+          %li.main__member= user.name
+    = link_to edit_group_path(@group), class: "edit__button" do
       Edit
   .main__message__list
     = render @messages
-  .main__message__list__text__box
-    .main__message__list__texts
-      .main__message__list__username
-      .main__message__list__date 
-  .main__message__list__message 
-    .main__message__form
-      = form_with model: [@group, @message], html: {class: "main__message__form__box"}, local: true do |f|
-        .main__message__form__box
-          = f.text_field :content, class: 'main__message__form__box__text', placeholder: 'type a message'
-          = f.label :image, class: 'main__message__form__box__image' do
-            =icon('far', 'image' , class: 'from__icon')
-            = f.file_field :image, class: 'main__message__form__box__file'
-          = f.submit'Send', class: 'send-btn' 
+  .main__message__form
+    = form_with model: [@group, @message], html: {class: "main__message__form__box"}, local: true do |f|
+      .main__message__form__box
+        = f.text_field :content, class: 'main__message__form__box__text', placeholder: 'type a message'
+        = f.label :image, class: 'main__message__form__box__image' do
+          =icon('far', 'image' , class: 'from__icon')
+          = f.file_field :image, class: 'main__message__form__box__file'
+        = f.submit'Send', class: 'send-btn' 
