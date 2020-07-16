@@ -8,3 +8,4 @@
     - if message.content.present?
       %p.main__message__from
         = message.content
+    = image_tag message.image.url, class: 'main__message__form__box__image' if message.image.present?
