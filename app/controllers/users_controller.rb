@@ -1,15 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.find(session[:user_id])
-    end
-
-    respond_to do |format|
-      format.html
-      format.json
-    end
-
-      return nil if params[:keyword] == ""
+    return nil if params[:keyword] == ""
       @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)
       respond_to do |format|
         format.html
@@ -17,7 +9,7 @@ class UsersController < ApplicationController
     end
   end
 
-  end
+  
   
   def update
     if current_user.update(user_params)
